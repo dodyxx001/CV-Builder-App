@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* border: 1px solid black; */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  html{
+    /* height: 100%; */
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    /* height: 100%; */
   }
-}
+  
+  #root{
+    /* height: 100%; */
+  }
+  
+  .app{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    /* height: 100%; */
+  }
+  
+  
+  .main{
+    display: flex;
+    width: 100%;
+    /* height: 100%; */
+    background-color: rgb(247, 224, 224);
+  }
+  
+/* FORM */
+
+  #form-title{
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(158, 158, 250);
+    padding: 0.5rem;
+    border-bottom: 1px solid gray;
+  }
+
+  .form{
+    background-color: rgb(217, 217, 247);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid gray;
+    
+  }
+
+  .form-subtitle {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 90%;
+    text-align: start;
+  }
+
+  .form-element{
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .form p {
+    font-weight: 600;
+  }
+
+  .form input {
+    height: 2rem;
+    width: 90%;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .form button {
+    height: 2rem;
+    width: 90%;
+    margin: 0.25rem 0;
+    background-color: rgb(206, 206, 206);
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  #add-education{
+    width: 86.75%;
+    margin-left: 1rem;
+  }
+
+  #add-experience{
+    width: 86.75%;
+    margin-left: 1rem;
+  }
+
+  .form button:hover{
+    background-color: rgb(184, 184, 184);
+    cursor: pointer;
+  }
+
+/* RENDER */
+  
+  .render{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gray;
+  }
+
+  #render-title{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0.5rem;
+    background-color: rgb(243, 189, 189);
+    border-bottom: 1px solid gray;
+  }
+
+  .render button {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  #buttons-wrapper {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+
+/* OUTPUT */
+
+  #output {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 2rem;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .section {
+    color: rgb(29, 29, 105);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    padding-top: 1.5rem;
+    border-bottom: 1px solid gray;
+  }
+
+  .section-title {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  #output-header {
+    background-color: rgb(29, 29, 105);
+    color: white;
+    padding: 1.5rem;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  #output-name {
+    font-size: 35px;
+    padding-bottom: 1rem;
+  }
+
+  #output-body-wrapper{
+    display: flex;
+    height: 100%;
+  }
+
+  #output-body {
+    width: 65%;
+    padding:  0 1.5rem;
+  }
+
+  #output-sidebar {
+    width: 35%;
+    background-color: rgb(224, 224, 224);
+    padding: 1.5rem;
+  }
+
+  #output img{
+    height: 15rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 1rem;
+  }
+
+  #output-email{
+    width: 90%;
+  }
+
+  .education-element{
+    display: flex;
+  }
+
+  .education-from-to{
+    width: 30%;
+  }
+
+  .experience-element{
+    display: flex;
+  }
+
+  .experience-from-to {
+    width: 30%;
+  }
+
+  .experience-title {
+    padding-bottom: 0.5rem;
+  }
+  
+  
+  
+  
