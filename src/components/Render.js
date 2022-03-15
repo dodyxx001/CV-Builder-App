@@ -11,7 +11,10 @@ export default function Render(props) {
         experienceList={props.experienceList}
         educationList={props.educationList}
       />
-      <Buttons />
+      <Buttons 
+        handleClear={props.handleClear}
+        handleLoadExample={props.handleLoadExample}
+      />
     </div>
   )
 }

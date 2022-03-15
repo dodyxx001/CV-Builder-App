@@ -1,24 +1,21 @@
 import React, {useState} from 'react';
 import '../App.css';
 import Form from './Form';
-import OutputExperienceList from './OutputExperienceList';
 import Render from './Render';
+import ExampleCV from './ExampleCV';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Main () {
 
-    // const [name, setName] = useState('Ziga Dodich');
-
-    // const handleChangeName = (e) => {
-    //     setName(e.target.value)
-    // }
+    // PERSONAL INFO SECTION
 
     const [personalInfo, setPersonalInfo] = useState({
-        name: 'Zach Dodich Test',
-        proffession: 'Softtttt developer, vet',
-        birth: '2.8.1993',
-        telephone: '040 233 600',
-        email: 'example.dodich@gmail.com',
-        description: 'lorem ipsum aojf ldjhv lkwe lkwejf lkwejf lkwej hrkjew flkjadjc asdkl vjaskldjv  lakjsdhlkjsd vkhrvwop r poer ši rqšpoipšeo ršpwoeri i špeqori aslkčdj lkjv a cvkj h v aks as h kh vliq uryq ulkj qwlkf',
+        name: '',
+        proffession: '',
+        birth: '',
+        telephone: '',
+        email: '',
+        description: '',
     });
 
     const handleChangePersonalInfo = (e) => {
@@ -34,12 +31,12 @@ export default function Main () {
 
     // EXPERIENCE SECTION
     const [experienceList, setExperience] = useState([{
-        position: 'Software developer',
-        company:'Netflix inc.',
-        city: 'Denver',
-        from: '01.01.2010',
-        to: '01.01.2020',
-        id: Date.now(),
+        position: '',
+        company:'',
+        city: '',
+        from: '',
+        to: '',
+        id: uuidv4(),
     }]);
 
 
@@ -70,21 +67,29 @@ export default function Main () {
             city: '',
             from: '',
             to: '',
-            id: Date.now(),
+            id: uuidv4(),
         };
         setExperience((arr) => [...arr, newExperience])
     };
+
+    const handleDeleteExperience = (id) => {
+        let filteredArr = experienceList.filter((ele) => {
+            return ele.id !== id
+        });
+
+        setExperience(filteredArr);
+    }
 
 
     // EDUCATION SECTION
 
     const [educationList, setEducation] = useState([{
-        university: 'UL Veterinarska fakulteta',
-        degree: 'Veterinarian',
-        city: 'Ljubljana',
-        from: '01.01.2010',
-        to: '01.01.2018',
-        id: Date.now(),
+        university: '',
+        degree: '',
+        city: '',
+        from: '',
+        to: '',
+        id: uuidv4(),
     }]);
 
 
@@ -110,30 +115,64 @@ export default function Main () {
             city: '',
             from: '',
             to: '',
-            id: Date.now(),
+            id: uuidv4(),
         }
 
         setEducation((arr) => [...arr, newEducation])
      
     };
 
+    const handleDeleteEducation = (id) => {
+        let filteredArr = educationList.filter((ele) => {
+            return ele.id !== id
+        });
+
+        setEducation(filteredArr);
+    }
+
+
+    // CLEAR, LOAD EXAMPLE and PRINT section
+
+    const handleClear = () => {
+        setPersonalInfo({});
+        setEducation([]);
+        setExperience([]);
+
+        let inputsToBeCleared = Array.from(document.getElementsByClassName('personalInfoInput'));
+        inputsToBeCleared.forEach((input) => {
+            input.value = ''
+        });
+    };
+
+    const handleLoadExample = () => {
+        setPersonalInfo(ExampleCV.personalInfo);
+        setEducation(ExampleCV.education);
+        setExperience(ExampleCV.experience);
+    }
+
   
 
     return (
         <div className="main">
             <Form 
+                personalInfo={personalInfo}
                 handleChangePersonalInfo={handleChangePersonalInfo} 
                 experienceList={experienceList}
                 handleChangeExperience={handleChangeExperience}
                 handleAddExperience={handleAddExperience}
+                handleDeleteExperience={handleDeleteExperience}
                 educationList={educationList}
                 handleChangeEducation={handleChangeEducation}
                 handleAddEducation={handleAddEducation}
+                handleDeleteEducation={handleDeleteEducation}
             />
             <Render 
                 personalInfo={personalInfo}
                 experienceList={experienceList}
                 educationList={educationList}
+                
+                handleClear={handleClear}
+                handleLoadExample={handleLoadExample}
             />
         </div>
     );
