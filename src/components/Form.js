@@ -43,6 +43,8 @@ export default function Form(props) {
         <FormPersonalInfo 
           personalInfo={props.personalInfo}
           handleChangePersonalInfo={props.handleChangePersonalInfo}
+          handleChangePhoto={props.handleChangePhoto}
+
         />
 
         <p className="form-subtitle">Education</p>

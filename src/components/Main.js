@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import '../App.css';
 import Form from './Form';
 import Render from './Render';
 import ExampleCV from './ExampleCV';
+import emptyAvatar from '../assets/empty_avatar.png' 
+import exampleAvatar from '../assets/example_avatar.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Main () {
@@ -27,6 +29,15 @@ export default function Main () {
             return info                      //returning modified state obj
         });
     }
+
+    // PHOTO SECTION
+
+    const [ photo, setPhoto ] = useState(emptyAvatar);
+
+    const handleChangePhoto = (file) => {
+        const fileURL = URL.createObjectURL(file);
+        setPhoto(fileURL);
+    };
 
 
     // EXPERIENCE SECTION
@@ -135,8 +146,23 @@ export default function Main () {
 
     const handleClear = () => {
         setPersonalInfo({});
-        setEducation([]);
-        setExperience([]);
+        setEducation([{
+            university: '',
+            degree: '',
+            city: '',
+            from: '',
+            to: '',
+            id: uuidv4(),
+        }]);
+        setExperience([{
+            position: '',
+            company:'',
+            city: '',
+            from: '',
+            to: '',
+            id: uuidv4(),
+        }]);
+        setPhoto(emptyAvatar);
 
         let inputsToBeCleared = Array.from(document.getElementsByClassName('personalInfoInput'));
         inputsToBeCleared.forEach((input) => {
@@ -148,15 +174,16 @@ export default function Main () {
         setPersonalInfo(ExampleCV.personalInfo);
         setEducation(ExampleCV.education);
         setExperience(ExampleCV.experience);
+        setPhoto(exampleAvatar);
     }
-
-  
+        
 
     return (
         <div className="main">
             <Form 
                 personalInfo={personalInfo}
                 handleChangePersonalInfo={handleChangePersonalInfo} 
+                handleChangePhoto={handleChangePhoto}
                 experienceList={experienceList}
                 handleChangeExperience={handleChangeExperience}
                 handleAddExperience={handleAddExperience}
@@ -168,6 +195,7 @@ export default function Main () {
             />
             <Render 
                 personalInfo={personalInfo}
+                photo={photo}
                 experienceList={experienceList}
                 educationList={educationList}
                 

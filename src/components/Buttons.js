@@ -5,7 +5,7 @@ export default function Buttons(props) {
     <div id="buttons-wrapper">
         <button id="button-load-example" onClick={props.handleLoadExample}>Load Example</button>
         <button id="button-clear" onClick={props.handleClear}>Clear</button>
-        <button id="button-print">Print / Download PDF</button>
+        <button id="button-print" onClick={props.handlePrint}>Print / Download PDF</button>
     </div>
   )
 }

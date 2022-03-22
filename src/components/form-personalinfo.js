@@ -1,4 +1,5 @@
 import React from 'react'
+import FileUploader from './FileUploader'
 
 export default function FormPersonalInfo(props) {
   
@@ -33,8 +34,6 @@ export default function FormPersonalInfo(props) {
                 value={props.personalInfo.birth}
                 onChange={props.handleChangePersonalInfo}>           
             </input>
-            {/* <input id="citizenship" type="text" placeholder="Citizenship"></input> */}
-            {/* <input id="address" type="text" placeholder="Address"></input> */}
             <input 
                 id="telephone" 
                 type="text" 
@@ -59,6 +58,10 @@ export default function FormPersonalInfo(props) {
                 value={props.personalInfo.description}
                 onChange={props.handleChangePersonalInfo}>
             </input>
+            <FileUploader 
+                handleChangePhoto={props.handleChangePhoto}
+            />  
+
     </div>
   )
 }
