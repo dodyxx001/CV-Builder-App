@@ -29,3 +29,9 @@ export default function Render(props) {
     </div>
   )
 }
+
+
+// rendering print: importamo useRef in useReactToPrint
+// var componentRef assignamo komponenti ki jo zelimo printat
+// v tej komponenti moremo wrapper div dodati atribut ref!
+// handle print funkcijo assignamo buttonu.

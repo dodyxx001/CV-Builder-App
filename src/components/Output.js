@@ -47,3 +47,8 @@ export default Output;
 // cilj: ce je polje prazno, ne pokazi outputa na renderju
 // pokazi ga sele, ko vnesemo nek value v input.
 // isto velja za education in experience.
+
+// react.forwardRef uporabimo zaradi useRef hooka v parent komponenti
+// moremo prenest referenco na wrapper div od te komponente, 
+// da jo lahko printamo.
+// to velja le za functional componentse.

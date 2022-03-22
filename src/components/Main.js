@@ -35,8 +35,8 @@ export default function Main () {
     const [ photo, setPhoto ] = useState(emptyAvatar);
 
     const handleChangePhoto = (file) => {
-        const fileURL = URL.createObjectURL(file);
-        setPhoto(fileURL);
+        const fileURL = URL.createObjectURL(file);  // preden set-amo nov image, ga moremo convertat v URL s tem ukazom
+        setPhoto(fileURL);  
     };
 
 
@@ -51,7 +51,7 @@ export default function Main () {
     }]);
 
 
-    // Zajebana funkcija, iz form-experience komponente moremo
+    // Iz form-experience komponente moremo
     // dobiti e in id. Id dobimo tako, da v Form-u mappamo experienceList
     // in assignamo vsakemu itemu svoj key.
 
@@ -69,7 +69,7 @@ export default function Main () {
            
             return [...newExperience]
         })
-    }
+    };
 
     const handleAddExperience = () => {
         let newExperience = {
@@ -89,7 +89,7 @@ export default function Main () {
         });
 
         setExperience(filteredArr);
-    }
+    };
 
 
     // EDUCATION SECTION
@@ -139,12 +139,14 @@ export default function Main () {
         });
 
         setEducation(filteredArr);
-    }
+    };
 
 
-    // CLEAR, LOAD EXAMPLE and PRINT section
+    // CLEAR, LOAD EXAMPLE section
+    // print section is in Output.js
 
     const handleClear = () => {
+        // set all states to empty
         setPersonalInfo({});
         setEducation([{
             university: '',
