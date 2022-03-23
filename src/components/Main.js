@@ -157,7 +157,7 @@ export default function Main () {
             id: uuidv4(),
         }]);
         setExperience([{
-            position: '',
+            position:'',
             company:'',
             city: '',
             from: '',

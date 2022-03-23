@@ -20,8 +20,8 @@ const Output = React.forwardRef((props, ref) => {
                     <p className="section">Education:</p>
                     <OutputEducationList educationList={props.educationList} />    
                 </div>
-                <div id="output-experience">
-                    <p className="section" style={{ display: props.experienceList[0].position ? "block" : "none" }}>Experience:</p>
+                <div id="output-experience" style={{ display: props.experienceList[0].position ? "block" : "none" }}>
+                    <p className="section">Experience:</p>
                     <OutputExperienceList experienceList={props.experienceList} />    
                 </div>
             </div>
