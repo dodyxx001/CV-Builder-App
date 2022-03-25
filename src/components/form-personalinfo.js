@@ -50,14 +50,13 @@ export default function FormPersonalInfo(props) {
                 value={props.personalInfo.email}
                 onChange={props.handleChangePersonalInfo}>
             </input>
-            <input 
-                id="description" 
-                type="text" 
+            <textarea 
+                id="description"  
                 placeholder="Description" 
                 className="personalInfoInput"
                 value={props.personalInfo.description}
                 onChange={props.handleChangePersonalInfo}>
-            </input>
+            </textarea>
             <FileUploader 
                 handleChangePhoto={props.handleChangePhoto}
             />  

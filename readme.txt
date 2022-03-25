@@ -1,5 +1,5 @@
 This is a CV - builder app, made in React with functional components.
-live preview:
+live preview: https://dodyxx001.github.io/CV-Builder-App/
 
 In this project I learned:
     - useState, useRef hooks
@@ -13,3 +13,8 @@ Version 1 took about 10 hours to finish. Implemented in version 1:
 - load example functionality
 - clear functionality
 - file uploading functionality
+
+Version 2 includes:
+- corrected input - description
+- added color-theme changing functionality
+- corrected bug of delete buttons - no more error-throwing

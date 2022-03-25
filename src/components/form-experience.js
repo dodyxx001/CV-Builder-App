@@ -9,7 +9,7 @@ export default function FormExperience(props) {
             <input name="city" type="text" placeholder="City" value={props.city} onChange={(e) => props.handleChangeExperience(e, props.id)} ></input>
             <input name="from" type="text" placeholder="From" value={props.from} onChange={(e) => props.handleChangeExperience(e, props.id)}></input>
             <input name="to" type="text" placeholder="To" value={props.to} onChange={(e) => props.handleChangeExperience(e, props.id)}></input>
-            <button name="experience-delete" onClick={() => props.handleDeleteExperience(props.id)}>Delete</button>
+            <button name="experience-delete" onClick={props.experienceList.length > 1 ? () => props.handleDeleteExperience(props.id) : null }>Delete</button>
 
     </div>
   )
@@ -22,3 +22,6 @@ export default function FormExperience(props) {
 // () => do something
 // zato ker, jih moremo call-at z nekimi parametri - id in e
 // ce ne uporabimo callbacka, se avtomatsko calla. nocemo tega
+
+// delete button: se aktivira le, če imamo več kot 1 item
+// če je sam 1 item, ga ne deletamo, ker pol vrze error pri renderingu

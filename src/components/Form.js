@@ -18,6 +18,7 @@ export default function Form(props) {
         position={item.position}
         from={item.from}
         to={item.to}
+        experienceList={props.experienceList}
       />
   ))
 
@@ -32,6 +33,7 @@ export default function Form(props) {
         city={item.city}
         from={item.from}
         to={item.to}
+        educationList={props.educationList}
       />
   ))
 

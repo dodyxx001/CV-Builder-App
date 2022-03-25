@@ -39,8 +39,11 @@ export default function FormEducation(props) {
               onChange={(e) => props.handleChangeEducation(e, props.id)}
               value={props.to}
               ></input>
-              
-            <button name="education-delete" onClick={() => props.handleDeleteEducation(props.id)}>Delete</button>
+
+            <button 
+              name="education-delete" 
+              onClick={props.educationList.length > 1 ? () => props.handleDeleteEducation(props.id) : null }
+            >Delete</button>
 
     </div>
   )
@@ -55,3 +58,6 @@ export default function FormEducation(props) {
 
 // v propsih imamo spravljen id, key in funkcijo handleChangeEducation.
 // moremo uporabit ((e) => props.handleChangeEducation(e, id)) formo, drugace ne dela
+
+// delete button: se aktivira le, če imamo več kot 1 item
+// če je sam 1 item, ga ne deletamo, ker pol vrze error pri renderingu

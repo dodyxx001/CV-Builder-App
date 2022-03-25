@@ -178,6 +178,30 @@ export default function Main () {
         setExperience(ExampleCV.experience);
         setPhoto(exampleAvatar);
     }
+
+    const [themeColor, setThemeColor] = useState('blue');
+    const handleChangeTheme = () => {
+        if (themeColor === 'blue'){
+            setThemeColor('red')
+            Array.from(document.getElementsByClassName('form'))[0].style.backgroundColor = 'rgb(247, 217, 217)';
+            Array.from(document.getElementsByClassName('section')).forEach((ele) => {
+                ele.style.color = 'rgb(105, 29, 29)'
+            });
+            document.getElementById('form-title').style.backgroundColor = 'rgb(250, 158, 158)';
+            document.getElementById('render-title').style.backgroundColor = 'rgb(253, 204, 204)';
+            document.getElementById('output-header').style.backgroundColor = "rgb(105, 29, 29)";
+        } else {
+            setThemeColor('blue');
+            Array.from(document.getElementsByClassName('form'))[0].style.backgroundColor = 'rgb(217, 217, 247)';
+            Array.from(document.getElementsByClassName('section')).forEach((ele) => {
+                ele.style.color = 'rgb(29, 29, 105)'
+            });
+            document.getElementById('form-title').style.backgroundColor = 'rgb(158, 158, 250)';
+            document.getElementById('render-title').style.backgroundColor = 'rgb(204, 204, 253)';
+            document.getElementById('output-header').style.backgroundColor = "rgb(29, 29, 105)";
+
+        };
+    }
         
 
     return (
@@ -203,6 +227,7 @@ export default function Main () {
                 
                 handleClear={handleClear}
                 handleLoadExample={handleLoadExample}
+                handleChangeTheme={handleChangeTheme}
             />
         </div>
     );

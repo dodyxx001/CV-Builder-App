@@ -25,6 +25,7 @@ export default function Render(props) {
         handleClear={props.handleClear}
         handleLoadExample={props.handleLoadExample}
         handlePrint={handlePrint}
+        handleChangeTheme={props.handleChangeTheme}
       />
     </div>
   )
