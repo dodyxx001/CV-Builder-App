@@ -179,6 +179,8 @@ export default function Main () {
         setPhoto(exampleAvatar);
     }
 
+    // CHANGE THEME section
+
     const [themeColor, setThemeColor] = useState('blue');
     const handleChangeTheme = () => {
         if (themeColor === 'blue'){
@@ -202,7 +204,8 @@ export default function Main () {
 
         };
     }
-        
+
+   
 
     return (
         <div className="main">

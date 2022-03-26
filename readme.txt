@@ -18,3 +18,4 @@ Version 2 includes:
 - corrected input - description
 - added color-theme changing functionality
 - corrected bug of delete buttons - no more error-throwing
+- version 2 took about 2 hours to complete

@@ -50,3 +50,6 @@ let ExampleCV = {
 };
 
 export default ExampleCV;
+
+
+// Tu exportamo OBJECT s 1 objectom in 2 arrayi kot propertiesi
